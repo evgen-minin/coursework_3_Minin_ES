@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "account-transactions"
+version = "0.1.0"
+description = ""
+authors = ["Евгений Минин <evgenminin1988@mail.ru>"]
+readme = "README.md"
+packages = [{include = "account_transactions"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
