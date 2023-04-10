@@ -20,7 +20,12 @@ class Operation:
         currency = self.operation_amount['currency']['name']
         return f"{encode_date} {self.description}\n{encode_from} -> {encode_to}\n{amount} {currency}"
 
-    def encode_from_to(self, value):
+    def encode_from_to(self, value: str) -> str:
+        """
+        Метод кодирует номер карты и номер счёта.
+        :param value:Номер карты или счёта.
+        :return:Изменённые номер карты и номер счёта.
+        """
         data = value.split()
         number_card = data[-1]
         if value.startswith('Счет'):
@@ -32,5 +37,9 @@ class Operation:
         data[-1] = result
         return ' '.join(data)
 
-    def get_info_operation(self):
+    def get_info_operation(self) -> str:
+        """
+        Метод возвращает строковое представление объекта операции.
+        :return:
+        """
         return Operation.__str__(self)
